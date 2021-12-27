@@ -4,6 +4,7 @@
  * Copyright (c) 2014, Jason Chen
  * Copyright (c) 2013, salesforce.com
  */
+{%
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -11560,3 +11561,4 @@ module.exports = __webpack_require__(63);
 /***/ })
 /******/ ])["default"];
 });
+%}

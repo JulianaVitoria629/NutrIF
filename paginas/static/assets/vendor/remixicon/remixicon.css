@@ -8,6 +8,7 @@
 *
 * Date: 2020-05-23
 */
+{%
 @font-face {
   font-family: "remixicon";
   src: url('remixicon.eot?t=1590207869815'); /* IE9*/
@@ -2315,3 +2316,4 @@
 .ri-zzz-fill:before { content: "\f2de"; }
 .ri-zzz-line:before { content: "\f2df"; }
 
+%}
