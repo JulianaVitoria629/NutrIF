@@ -1,3 +1,4 @@
+'''
 from django.db import models
 
 class Base(models.Model):
@@ -13,3 +14,4 @@ class Categoria(models):
     nome = models.CharField("Nome", max_length= 20)
     Descricao = models.CharField("Descrição", max_length= 200)
     codigo = models.CharField("Código", max_length= 5)
+    '''
