@@ -1,4 +1,4 @@
-
+'''
 from django.db import models
 from django.db.models import base
 
@@ -33,3 +33,4 @@ class Validade(models):
     nomeAlimento = models.CharField("Nome do alimento", max_length= 50)
     dataValidade = models.DateField("Data", auto_now= True)
     quantidade = models.IntegerField("Quantidade", max_length= 10)
+'''

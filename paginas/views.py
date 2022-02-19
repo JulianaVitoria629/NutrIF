@@ -4,3 +4,6 @@ from django.views.generic import TemplateView
 
 class HomeView(TemplateView):
     template_name = 'index.html'
+
+class RegisterUserView(TemplateView):
+    template_name = 'pages-register-user.html'
