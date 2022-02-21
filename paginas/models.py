@@ -7,30 +7,52 @@ class Base(models.Model):
     abastecimento = models.DateField("Data de abastecimento do estoque", auto_now= True)
     ativo = models.BooleanField("Ativo?" default= True)
 
-class Alimento(Base):
+class Alimento(models.Model):
     nomeAlimento = models.CharField("Nome", max_length= 50 )
     unidadeDeMedida = models.CharField("Unidade de Medida", max_length= 10)
     codigoDacategoria = models.CharField("Codigo da categoria do Alimento", max_length= 45)
 
-class Categoria(Base):
+class Categoria(models.Model):
     nome = models.CharField("Nome", max_length= 20)
     Descricao = models.CharField("Descrição", max_length= 200)
     codigo = models.CharField("Código", max_length= 5)
 
-class Fornecedor(Base):
+class Fornecedor(models.Model):
     nome = models.CharField("Nome do fornecedor", max_length= 50)
     Endereco = models.CharField("Endereço", max_length=100)
     cnpj= models.CharField("CNPJ", max_length=14)
 
-class Funcionario(models):
+class Funcionario(models.Model):
     nome = models.CharField("Nome do Funcionario", max_length = 60)
     telefone = models.CharField("Telefone" max_length= 11)
     senha = models.CharField("Senha", max_length= 256)
     tipo = models.CharField("Tipo", max_length= 15)
     matricula = models.CharField("Matrícula", max_length= 9)
 
-class Validade(models):
-    nomeAlimento = models.CharField("Nome do alimento", max_length= 50)
-    dataValidade = models.DateField("Data", auto_now= True)
-    quantidade = models.IntegerField("Quantidade", max_length= 10)
-'''
+class ValidadedeAlimento(models.Model):
+    nomeAlimento = models.ForeignKey(Alimento, on_delete=models.CASCADE)
+    dataValidade = models.DateField("Data")
+    quantidade = models.FloatField("Quantidade recebida")
+    quantidade = models.FloatField("Quantidade recebida")
+ 
+
+class Fornece(models.Model):
+    nomeAlimento = models.ForeignKey(Alimento, on_delete=models.CASCADE)
+    cnpjFornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE)
+
+class Recebe(models.Model):
+    nomeAlimento = models.ForeignKey(Alimento, on_delete=models.CASCADE)
+    quantidade = models.FloatField("Quantidade recebida")
+    data = models.DateField("Data de recebimento")
+    matriculaFuncionario= models.ForeignKey(Funcionario, on_delete=models.CASCADE)
+
+class Utiliza(models.Model):
+    nomeAlimento = models.ForeignKey(Alimento, on_delete=models.CASCADE)
+    turno = models.CharField("Turno utilizou", max_length= 15)
+    data = models.DateField("Data que o alimento foi utilizado")
+    quantidade = models.FloatField("Quantidade utilizada")
+    matriculaFuncionario= models.ForeignKey(Funcionario, on_delete=models.CASCADE)
+
+class TelefoneFornecedor(models.Model):
+    cnpjFornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE)
+    telefone = models.CharField("Telefone" max_length= 11)'''
