@@ -1,11 +1,11 @@
-'''
+
 from django.db import models
 from django.db.models import base
 
 class Base(models.Model):
     cadastroprod = models.DateField("Data de cadastro de produto", auto_now_add=True)
     abastecimento = models.DateField("Data de abastecimento do estoque", auto_now= True)
-    ativo = models.BooleanField("Ativo?" default= True)
+    ativo = models.BooleanField("Ativo?", default= True)
 
 class Alimento(models.Model):
     nomeAlimento = models.CharField("Nome", max_length= 50 )
@@ -24,7 +24,7 @@ class Fornecedor(models.Model):
 
 class Funcionario(models.Model):
     nome = models.CharField("Nome do Funcionario", max_length = 60)
-    telefone = models.CharField("Telefone" max_length= 11)
+    telefone = models.CharField("Telefone", max_length= 11)
     senha = models.CharField("Senha", max_length= 256)
     tipo = models.CharField("Tipo", max_length= 15)
     matricula = models.CharField("Matrícula", max_length= 9)
@@ -55,4 +55,4 @@ class Utiliza(models.Model):
 
 class TelefoneFornecedor(models.Model):
     cnpjFornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE)
-    telefone = models.CharField("Telefone" max_length= 11)'''
+    telefone = models.CharField("Telefone", max_length= 11)
