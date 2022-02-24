@@ -64,10 +64,14 @@
                     <p class="text-center small">Digite seus dados para o cadastro</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  
+
+              
                     <div class="col-12">
+                  <form action="." method="GET">{% csrf_token %}
+                    {{form}}
                       <label for="nomeCompleto" class="form-label">Nome completo</label>
-                      <input type="text" name="name" class="form-control" id="nomeCompleto" required>
+                      <input type="text" name="nomeCompleto" class="form-control" id="nomeCompleto" required>
                       <div class="invalid-feedback">Por favor, digite seu nome!</div>
                     </div>
 
@@ -78,16 +82,16 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="yourEmail" class="form-label">Telefone</label>
-                      <input type="email" name="email" class="form-control" id="yourEmail" required>
+                      <label for="telefone" class="form-label">Telefone</label>
+                      <input type="number" name="telefone" class="form-control" id="telefone" required>
                       <div class="invalid-feedback">Por favor, digite seu telefone!</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Matrícula</label>
+                      <label for="matrícula" class="form-label">Matrícula</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" name="matrícula" class="form-control" id="matrícula" required>
                         <div class="invalid-feedback">Por favor digite sua matrícula do SUAP.</div>
                       </div>
                     </div>

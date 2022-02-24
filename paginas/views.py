@@ -28,12 +28,12 @@ class CategoriacreateView(CreateView):
     
 class FornecedorCreateView(CreateView):
     model = Fornecedor
-    fiels =['nome', 'endereço', 'cnpj']
+    fields =['nome', 'endereço', 'cnpj']
     template_name = 'form_fornecedor.html'
     sucess_url = reverse_lazy('index')
 
 class FuncionarioCreateView(CreateView):
     model = Funcionario
-    fiels =['nome', 'telefone', 'tipo', 'senha', 'matricula']
+    fields =['nome', 'telefone', 'tipo', 'senha', 'matricula']
     template_name = 'pages-register-user.html'
     sucess_url = reverse_lazy('index')

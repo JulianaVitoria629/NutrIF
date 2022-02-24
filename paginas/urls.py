@@ -5,8 +5,5 @@ from .views import FuncionarioCreateView
 urlpatterns = [
     path('', HomeView.as_view(), name='index'),
     path('cadastro_de_usuario', RegisterUserView.as_view(), name='cadastro_de_usuario'),
-
-
-
-    path('validar_cadastro_usuario', FuncionarioCreateView.as_view(), name='validar_cadastro_usuario'),
+    path('cadastrar/funcionario/', FuncionarioCreateView.as_view(), name='cadastrar-funcionario'),
 ]   
