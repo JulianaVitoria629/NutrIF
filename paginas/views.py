@@ -14,6 +14,10 @@ class HomeView(TemplateView):
 class RegisterUserView(TemplateView):
     template_name = 'pages-register-user.html'
 
+class CadastrodealimentoView(TemplateView):
+    template_name = 'pages-register-alimento.html'
+
+
 class AlimentoCreateView(CreateView): 
     model = Alimento
     fields = ['nome', 'Unidade de medida', 'Código da categoria do alimento']

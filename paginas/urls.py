@@ -6,4 +6,5 @@ urlpatterns = [
     path('', HomeView.as_view(), name='index'),
     path('cadastro_de_usuario', RegisterUserView.as_view(), name='cadastro_de_usuario'),
     path('cadastrar/funcionario/', FuncionarioCreateView.as_view(), name='cadastrar-funcionario'),
+    path('registro_de_alimento', CadastrodealimentoView.as_view(), name='cadastrar_alimento'),
 ]   
