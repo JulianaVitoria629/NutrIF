@@ -11,12 +11,17 @@ from .models import Alimento, Categoria, Fornecedor, Funcionario
 class HomeView(TemplateView):
     template_name = 'index.html'
 
+class LoginUserView(TemplateView):
+    template_name = 'pages-login-user.html'
+
+class RegisterAlimentoView(TemplateView):
+    template_name = 'pages-register-alimento.html'
+
 class RegisterUserView(TemplateView):
     template_name = 'pages-register-user.html'
 
-class CadastrodealimentoView(TemplateView):
-    template_name = 'pages-register-alimento.html'
-
+class RegisterView(TemplateView):
+    template_name = 'pages-register.html'
 
 class AlimentoCreateView(CreateView): 
     model = Alimento
