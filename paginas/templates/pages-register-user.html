@@ -65,13 +65,10 @@
                   </div>
 
                   
-
-              
+                  <form class="row g-3 needs-validation" novalidate>
                     <div class="col-12">
-                  <form action="." method="GET">{% csrf_token %}
-                    {{form}}
                       <label for="nomeCompleto" class="form-label">Nome completo</label>
-                      <input type="text" name="nomeCompleto" class="form-control" id="nomeCompleto" required>
+                      <input type="text" name="name" class="form-control" id="nomeCompleto" required>
                       <div class="invalid-feedback">Por favor, digite seu nome!</div>
                     </div>
 
@@ -83,7 +80,7 @@
 
                     <div class="col-12">
                       <label for="telefone" class="form-label">Telefone</label>
-                      <input type="number" name="telefone" class="form-control" id="telefone" required>
+                      <input type="telefone" name="telefone" class="form-control" id="telefone" required>
                       <div class="invalid-feedback">Por favor, digite seu telefone!</div>
                     </div>
 
