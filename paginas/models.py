@@ -13,12 +13,12 @@ class Alimento(models.Model):
 
 class Categoria(models.Model):
     nome = models.CharField("Nome", max_length= 20)
-    Descricao = models.CharField("Descrição", max_length= 200)
+    descricao = models.CharField("Descrição", max_length= 200)
     codigo = models.CharField("Código", max_length= 5)
 
 class Fornecedor(models.Model):
     nome = models.CharField("Nome do fornecedor", max_length= 50)
-    Endereco = models.CharField("Endereço", max_length=100)
+    endereco = models.CharField("Endereço", max_length=100)
     cnpj= models.CharField("CNPJ", max_length=14)
 
 class Funcionario(models.Model):

@@ -1,7 +1,7 @@
 from audioop import reverse
 from dataclasses import fields
 from re import template
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
@@ -18,7 +18,7 @@ class RegisterAlimentoView(TemplateView):
     template_name = 'pages-register-alimento.html'
 
 class RegisterUserView(TemplateView):
-    template_name = 'pages-register-user.html'
+    template_name = 'cadastros/form.html'
 
 class RegisterView(TemplateView):
     template_name = 'pages-register.html'
@@ -44,5 +44,15 @@ class FornecedorCreateView(CreateView):
 class FuncionarioCreateView(CreateView):
     model = Funcionario
     fields =['nome', 'telefone', 'tipo', 'senha', 'matricula']
-    template_name = 'pages-register-user.html'
+    template_name = 'cadastros/form.html'
     sucess_url = reverse_lazy('index')
+
+def cadastrar_usuario(request):
+    if request.method == "POST":
+        form_usuario = UserCreationForm(request.POST)
+        if form_usuario.is_valid():
+            form_usuario.save()
+            return redirect('index')
+    else:
+        form_usuario = UserCreationForm()
+    return render(request, 'cadastro.html', {'form_usuario': form_usuario})

@@ -14,6 +14,6 @@ urlpatterns = [
     path ('registro', RegisterView.as_view(), 
     name= 'registro'),
     
-    path('cadastrar/funcionario/', FuncionarioCreateView.as_view(), name='cadastrar-funcionario'),
+    path('cadastrarfuncionario/', FuncionarioCreateView.as_view(), name='cadastrarfuncionario/'),
     
     ]
