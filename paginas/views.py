@@ -9,6 +9,9 @@ from .models import Alimento, Categoria, Fornecedor, Funcionario
 # Create your views here.
 
 class HomeView(TemplateView):
+    template_name = 'pages-login-user.html'
+
+class IndexView(TemplateView):
     template_name = 'index.html'
 
 class LoginUserView(TemplateView):
