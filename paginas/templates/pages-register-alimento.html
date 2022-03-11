@@ -79,13 +79,13 @@
                   
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Código da categoria</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input type="text" name="text" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Por favor, insira uma categoria válida!</div>
                     </div>
               
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Cadastrar alimento</button>
+                      <button class="btn btn-primary w-100" type="submit"><a href="{% url 'index' %}" style="color:white;">Cadastrar alimento</a></button>
                     </div>              
                   </form>
 
