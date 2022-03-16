@@ -28,10 +28,14 @@ class Fornecedor(models.Model):
     cnpj= models.CharField("CNPJ", max_length=14)
 
 class Funcionario(models.Model):
+    CHOICES = (
+        ('SE', 'Servidor'),
+        ('TE' ,'Terceirizado'),
+    )
     nomeFuncionario = models.CharField("Nome do Funcionario", max_length = 60)
     telefone = models.CharField("Telefone", max_length= 11)
     senha = models.CharField("Senha", max_length= 256)
-    tipo = models.CharField("Tipo", max_length= 15)
+    tipo = models.CharField("Tipo", max_length= 15, choices = CHOICES)
     matricula = models.CharField("Matrícula", max_length= 9)
 
     def __str__(self):

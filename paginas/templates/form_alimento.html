@@ -1,0 +1,19 @@
+{% if not object.id %}
+<form method="POST" enctype="multipart/form-data">
+  <!-- Security token -->
+  {% csrf_token %}
+
+  <!-- Using the formset -->
+  {{ form.as_p }}
+
+  <input type="submit" value="Enviar" />
+</form>
+
+{% else %}
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <input type="submit" value="Salvar alterações" />
+  
+</form>
+
+{% endif%}
