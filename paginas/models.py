@@ -11,22 +11,31 @@ class Alimento(models.Model):
     unidadeDeMedida = models.CharField("Unidade de Medida", max_length= 10)
     codigoDacategoria = models.CharField("Codigo da categoria do Alimento", max_length= 45)
 
+    def __str__(self):
+        return self.nomeAlimento
+
 class Categoria(models.Model):
     nome = models.CharField("Nome", max_length= 20)
-    descricao = models.CharField("Descrição", max_length= 200)
+    descricao = models.CharField("Descricao do produto", max_length= 200)
     codigo = models.CharField("Código", max_length= 5)
+
+    def __str__(self):
+        return self.descricao
 
 class Fornecedor(models.Model):
     nome = models.CharField("Nome do fornecedor", max_length= 50)
-    endereco = models.CharField("Endereço", max_length=100)
+    endereco = models.CharField("Endereco do fornecedor", max_length=100)
     cnpj= models.CharField("CNPJ", max_length=14)
 
 class Funcionario(models.Model):
-    nome = models.CharField("Nome do Funcionario", max_length = 60)
+    nomeFuncionario = models.CharField("Nome do Funcionario", max_length = 60)
     telefone = models.CharField("Telefone", max_length= 11)
     senha = models.CharField("Senha", max_length= 256)
     tipo = models.CharField("Tipo", max_length= 15)
     matricula = models.CharField("Matrícula", max_length= 9)
+
+    def __str__(self):
+        return self.nomeFuncionario
 
 class ValidadedeAlimento(models.Model):
     nomeAlimento = models.ForeignKey(Alimento, on_delete=models.CASCADE)
