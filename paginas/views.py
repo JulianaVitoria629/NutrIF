@@ -21,7 +21,7 @@ class RegisterAlimentoView(TemplateView):
     template_name = 'pages-register-alimento.html'
 
 class RegisterUserView(TemplateView):
-    template_name = 'cadastros/form.html'
+    template_name = 'pages-register-user.html'
 
 class RegisterView(TemplateView):
     template_name = 'pages-register.html'
@@ -47,10 +47,10 @@ class FornecedorCreateView(CreateView):
 class FuncionarioCreateView(CreateView):
     model = Funcionario
     fields =['nome', 'telefone', 'tipo', 'senha', 'matricula']
-    template_name = 'cadastros/form.html'
+    template_name = 'funcionario_form.html'
     sucess_url = reverse_lazy('index')
 
-def cadastrar_usuario(request):
+'''def cadastrar_usuario(request):
     if request.method == "POST":
         form_usuario = UserCreationForm(request.POST)
         if form_usuario.is_valid():
@@ -58,4 +58,4 @@ def cadastrar_usuario(request):
             return redirect('index')
     else:
         form_usuario = UserCreationForm()
-    return render(request, 'cadastro.html', {'form_usuario': form_usuario})
+    return render(request, 'cadastro.html', {'form_usuario': form_usuario})'''
