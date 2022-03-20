@@ -1,11 +1,7 @@
-from audioop import reverse
-from dataclasses import fields
-from re import template
-from django.shortcuts import redirect, render
-from django.urls import reverse_lazy
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
 from .models import Alimento, Categoria, Fornecedor, Funcionario
+from django.urls import reverse_lazy
 # Create your views here.
 
 class HomeView(TemplateView):
@@ -45,10 +41,11 @@ class FornecedorCreateView(CreateView):
     sucess_url = reverse_lazy('index')
 
 class FuncionarioCreateView(CreateView):
+    template_name = 'form_funcionario.html'
     model = Funcionario
     fields =['nomeFuncionario', 'telefone', 'senha', 'tipo','matricula']
-    template_name = 'form_funcionario.html'
-    sucess_url = reverse_lazy('index')
+    sucess_url = reverse_lazy('login')
+    
 
 '''def cadastrar_usuario(request):
     if request.method == "POST":
