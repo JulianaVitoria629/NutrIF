@@ -44,7 +44,7 @@ class FuncionarioCreateView(CreateView):
     template_name = 'form_funcionario.html'
     model = Funcionario
     fields =['nomeFuncionario', 'telefone', 'senha', 'tipo','matricula']
-    sucess_url = reverse_lazy('login')
+    success_url = reverse_lazy('login')
     
 
 '''def cadastrar_usuario(request):
