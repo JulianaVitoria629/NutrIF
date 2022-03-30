@@ -26,25 +26,25 @@ class AlimentoCreateView(CreateView):
     model = Alimento
     fields = ['nome', 'Unidade de medida', 'Código da categoria do alimento']
     template_name = 'pages-register-alimento.html'
-    sucess_url = reverse_lazy('index')
+    success_url = reverse_lazy('index')
 
 class CategoriacreateView(CreateView):
     model = Categoria
     fields = ['nome', 'descrição', 'código']
     template_name = 'pages-register-alimento.html'
-    sucess_url = reverse_lazy('index')
+    success_url = reverse_lazy('index')
     
 class FornecedorCreateView(CreateView):
     model = Fornecedor
     fields =['nome', 'endereço', 'cnpj']
     template_name = 'form_fornecedor.html'
-    sucess_url = reverse_lazy('index')
+    success_url = reverse_lazy('index')
 
 class FuncionarioCreateView(CreateView):
     template_name = 'form_funcionario.html'
     model = Funcionario
     fields =['nomeFuncionario', 'telefone', 'senha', 'tipo','matricula']
-    sucess_url = reverse_lazy('login')
+    success_url = reverse_lazy('login')
     
 
 '''def cadastrar_usuario(request):
